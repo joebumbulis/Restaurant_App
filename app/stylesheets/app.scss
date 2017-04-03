@@ -1,6 +1,72 @@
+@import "header";
+@import "aside";
+@import "footer";
+
 $big-font: 15rem;
 $color-primary: #E8E9EB;
 $color-secondary: #E0DFD5;
 $color-third: #E4B363;
 $color-four: #EF6461;
 $color-five: #313638;
+
+
+main {
+  border-top: solid .1rem $color-five;
+  border-bottom: solid .1rem $color-five;
+  position: relative;
+}
+
+
+.table-pic {
+  margin: 0 auto;
+  padding: 1rem 0 1rem 0;
+  border-top: solid .1rem $color-five;
+  border-bottom: solid .1rem $color-five;
+  width: 100%;
+}
+
+.menu-container {
+  width: 70%;
+  min-height: 30rem;
+  max-height: 100%;
+  overflow: scroll;
+
+  h2 {
+    color: $color-third;
+    border-bottom: solid .1rem $color-five;
+    font-family: trebucket ms, sans-serif;
+    font-size: 3rem;
+  }
+  h3 {
+    color: $color-third;
+    border-bottom: dashed .1rem $color-five;
+    font-family: trebucket ms, sans-serif;
+    font-size: 2.5rem;
+  }
+  h4 {
+    color: $color-four;
+    float: left;
+    margin: 0;
+    font-family: trebucket ms, sans-serif;
+    font-size: 1.5rem;
+  }
+  // h4:after {
+  //   border-bottom: dashed .1rem $color-five;
+  //
+  // }
+  h5 {
+    color: $color-four;
+    float: right;
+    margin: 0;
+    font-family: trebucket ms, sans-serif;
+    font-size: 1rem;
+  }
+  .description {
+    color: $color-third;
+    clear: both;
+    font-family: georgia, serif;
+    font-size: 1rem;
+    width: 80%;
+    border-right: solid .1rem $color-four;
+  }
+}

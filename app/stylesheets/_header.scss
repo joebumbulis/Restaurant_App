@@ -1,0 +1,28 @@
+$big-font: 15rem;
+$color-primary: #E8E9EB;
+$color-secondary: #E0DFD5;
+$color-third: #E4B363;
+$color-four: #EF6461;
+$color-five: #313638;
+
+body {
+  background: $color-primary;
+  font-family: trebucket ms, sans-serif;;
+}
+
+.header {
+  color: $color-four;
+  border-bottom: solid .1rem $color-five;
+
+}
+
+h1 {
+float: left;
+margin-left: 2rem;
+font-size: 3rem;
+}
+
+.top-button {
+  float: right;
+  margin: 3rem 4rem;;
+}

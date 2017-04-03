@@ -1,28 +1,45 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="utf-8">
     <title>Joe's Redux Restaurant</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/6.0.0/normalize.min.css">
     <link rel="stylesheet" href="./styles.css">
-  </head>
-  <body>
-    <section id="app">
-      <!-- All HTML placed here will be erased when the app is running -->
-      <header>
-        <h1>Deliciousmess!</h1>
-        <div>VIEW MENUS</div>
-      </header>
-      <body>
-        <img src="app/images/medPic.jpg" alt="">
-        <h2>Our Menus</h2>
-        <h3>Appetizers</h3>
-        
-      </body>
-      <footer>
+</head>
 
-      </footer>
+<body>
+    <section id="app">
+        <!-- All HTML placed here will be erased when the app is running -->
+        <div class="header">
+            <h1>Deliciousmess!</h1>
+            <div class="top-button">VIEW MENUS</div>
+        </div>
+
+        <main>
+                <img class="table-pic" src="app/images/medPic.jpg" alt="">
+            <div class="menu-container">
+                <h2>Our Menus</h2>
+                <h3>Appetizers</h3>
+                <h4>Item Title</h4>
+                <h5>Price</h5>
+                <p class="description">description: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+            <aside class="order-box">
+                <h6>Your Order</h6>
+                <ul>
+
+                </ul>
+                <h6>Tax:</h6>
+                <h6>Total:</h6>
+                <button class="order-button" type="button">Order Now</button>
+            </aside>
+        </main>
+        <footer>
+            Deliciousmess&COPY; 2017
+        </footer>
     </section>
     <script src="./app.js"></script>
-  </body>
+</body>
+
 </html>
