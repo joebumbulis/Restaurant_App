@@ -8,7 +8,8 @@ from './home_view.js';
 
 export default function app() {
     const initialState = {
-        // order: [],
+        menu: [],
+        order: [],
         view: homeView
     };
     // console.log(initialState.view);

@@ -1,4 +1,9 @@
 export default function homeView(store){
+  const urlFancy = 'https://tiy-austin-front-end-engineering.github.io/restaurantApi/fancy.json';
+  const urlCafe = 'https://tiy-austin-front-end-engineering.github.io/restaurantApi/cafe.json';
+  const urlPub = 'https://tiy-austin-front-end-engineering.github.io/restaurantApi/pub.json';
+
+
 
   let $html = $(`
     <section>
@@ -10,11 +15,11 @@ export default function homeView(store){
     <main>
             <img class="table-pic" src="app/images/medPic.jpg" alt="">
         <div class="menu-container">
-            <h2>Our Menus</h2>
-            <h3>Appetizers</h3>
-            <h4>Item Title</h4>
-            <h5>Price</h5>
-            <p class="description">description: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <h2>Our Menus</h2>
+        <h3>Appetizers</h3>
+        <h4>Item Title</h4>
+        <h5>price</h5>
+        <p class='description'>description</p>
         </div>
         <aside class="order-box">
             <h6>Your Order</h6>
@@ -33,12 +38,40 @@ export default function homeView(store){
     </section>
     `);
 
-  // $($html).find('button').on('click', function (e) {
-  //   store.dispatch({
-  //     type: "ADD_TO_ORDER",
-  //     // item:
-  //   });
-  // });
+
+    $.ajax({
+      type: 'GET',
+      dataType: 'json',
+      url: urlFancy,
+    }).then((data)=>{
+      console.log(data);
+      let appetizers = data.appetizers;
+      let entrees = data.entrees;
+      let sides = data.sides;
+      console.log(appetizers);
+      let menuContainer =  $html.find('.menu-container')
+      appetizers.forEach((item)=>{
+        console.log(item);
+      
+      })
+
+
+
+      entrees.forEach((item)=>{
+        console.log(item);
+      })
+      sides.forEach((item)=>{
+        console.log(item);
+      })
+    })
+
+
+  $($html).find('button').on('click', function (e) {
+    store.dispatch({
+      type: "ADD_TO_ORDER",
+      // item:
+    });
+  });
 
   return $html;
 }
