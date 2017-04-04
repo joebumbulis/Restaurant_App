@@ -1,8 +1,19 @@
 import {
     createStore
 } from 'redux';
-import { homeView } from './home_view.js';
+import
+homeView
+from './home_view.js';
+
+
 export default function app() {
+    const initialState = {
+        // order: [],
+        view: homeView
+    };
+    // console.log(initialState.view);
+
+
 
     console.log(createStore(function(state = [], action) {
         return state;
@@ -11,21 +22,36 @@ export default function app() {
     const urlCafe = 'https://tiy-austin-front-end-engineering.github.io/restaurantApi/cafe.json/';
     const urlPub = 'https://tiy-austin-front-end-engineering.github.io/restaurantApi/pub.json';
 
-    const initialState = {
-        order: [],
-        view: homeView
-    }
 
-    const reducer = function(currentState, action) {
-        if (currentState = undefined) {
-            return initialState
+
+
+    const appReducer = function(state, action) {
+        if (state === undefined) {
+            state = initialState;
         }
+        switch (action.type) {
+            case "TESTING":
+                console.log("It works!");
+                console.log(state);
+                return state
 
-        // switch(action.type) {
-        //   case
-        // }
+            default:
+                return state;
+
+        };
+
     }
+    const store = createStore(appReducer)
 
+    const render = function() {
+        let state = store.getState();
+        console.log(state);
+        $('#app').html(state.view(store))
+    };
 
+    store.subscribe(render);
 
+    store.dispatch({
+        type: "TESTING",
+    });
 }
